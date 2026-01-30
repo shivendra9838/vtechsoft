@@ -4,7 +4,7 @@ let isConnected = false;
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/vtechsoft', {
+    const conn = await mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/vtechsoft', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -12,7 +12,7 @@ const connectDB = async () => {
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.error(`MongoDB connection error: ${error.message}`);
-    console.log('Server will run without database. Update MONGODB_URI in .env to enable full functionality.');
+    console.log('Server will run without database. Update MONGO_URI in .env to enable full functionality.');
     isConnected = false;
   }
 };
