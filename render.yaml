@@ -1,0 +1,19 @@
+{
+  "version": "1",
+  "name": "vtechsoft-backend",
+  "build": {
+    "env": {
+      "NODE_VERSION": "18"
+    }
+  },
+  "buildCommand": "echo 'No build step required'",
+  "startCommand": "npm start",
+  "env": {
+    "NODE_ENV": "production",
+    "MONGO_URI": "mongodb+srv://techsoft:techsoft9838@cluster0.cdfsqrd.mongodb.net",
+    "JWT_SECRET": "techsoft",
+    "EMAIL_USER": "vtechsoft9838@gmail.com",
+    "EMAIL_PASS": "jzpnvonsyeegcxfo",
+    "FRONTEND_URL": "https://vtechsoft-frontend.vercel.app"
+  }
+}
