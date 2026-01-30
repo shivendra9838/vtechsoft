@@ -10,7 +10,7 @@
   "startCommand": "npm start",
   "env": {
     "NODE_ENV": "production",
-    "MONGO_URI": "mongodb+srv://techsoft:techsoft9838@cluster0.cdfsqrd.mongodb.net",
+    "MONGODB_URI": "mongodb+srv://techsoft:techsoft9838@cluster0.cdfsqrd.mongodb.net",
     "JWT_SECRET": "techsoft",
     "EMAIL_USER": "vtechsoft9838@gmail.com",
     "EMAIL_PASS": "jzpnvonsyeegcxfo",

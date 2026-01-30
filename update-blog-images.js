@@ -13,9 +13,14 @@ const imageUrls = {
   "Machine Learning in Web Development": "https://images.unsplash.com/photo-1555250002-52383c5a6d0c?w=800&h=400&fit=crop&crop=entropy&auto=format"
 };
 
-mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://techsoft:techsoft9838@cluster0.cdfsqrd.mongodb.net')
+if (!process.env.MONGODB_URI) {
+  console.error('❌ MONGODB_URI environment variable is not set');
+  process.exit(1);
+}
+
+mongoose.connect(process.env.MONGODB_URI)
 .then(async () => {
-  console.log('Connected to MongoDB');
+  console.log('✅ Connected to MongoDB');
   
   // Update all blog posts with images
   const posts = await Blog.find({});

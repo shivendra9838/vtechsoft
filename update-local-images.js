@@ -13,9 +13,14 @@ const localImageUrls = {
   "Machine Learning in Web Development": "/src/assets/blog/machine.png"
 };
 
-mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://techsoft:techsoft9838@cluster0.cdfsqrd.mongodb.net')
+if (!process.env.MONGODB_URI) {
+  console.error('❌ MONGODB_URI environment variable is not set');
+  process.exit(1);
+}
+
+mongoose.connect(process.env.MONGODB_URI)
 .then(async () => {
-  console.log('Connected to MongoDB');
+  console.log('✅ Connected to MongoDB');
   
   // Update all blog posts with local images
   const posts = await Blog.find({});

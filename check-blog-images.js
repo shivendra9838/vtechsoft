@@ -4,9 +4,14 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://techsoft:techsoft9838@cluster0.cdfsqrd.mongodb.net')
+if (!process.env.MONGODB_URI) {
+  console.error('❌ MONGODB_URI environment variable is not set');
+  process.exit(1);
+}
+
+mongoose.connect(process.env.MONGODB_URI)
 .then(async () => {
-  console.log('Connected to MongoDB');
+  console.log('✅ Connected to MongoDB');
   
   const posts = await Blog.find().select('title image');
   console.log(`Found ${posts.length} blog posts:`);
