@@ -39,11 +39,19 @@ app.use('/api/contact', contactRoutes);
 app.use('/api/chatbot', chatbotRoutes);
 
 // Health check route
-app.get('/api/health', (req, res) => {
+app.get('/api/health', async (req, res) => {
+  const { checkConnection } = await import('./config/db.js');
+  const dbConnected = checkConnection();
+  
   res.json({
     success: true,
     message: 'VTECHSOFT API is running',
     timestamp: new Date().toISOString(),
+    database: {
+      connected: dbConnected,
+      status: dbConnected ? 'connected' : 'disconnected'
+    },
+    environment: process.env.NODE_ENV || 'development'
   });
 });
 
