@@ -6,7 +6,7 @@
       "NODE_VERSION": "18"
     }
   },
-  "buildCommand": "echo 'No build step required'",
+  "buildCommand": "npm install",
   "startCommand": "npm start",
   "env": {
     "NODE_ENV": "production",
