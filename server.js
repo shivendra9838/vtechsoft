@@ -24,7 +24,7 @@ app.use(cors({
     'http://localhost:5173',
     'http://localhost:5174',
     'http://localhost:3000',
-    'https://vtechsoft-frontend.vercel.app'
+    'https://vtechsoft-frontend-i77s.vercel.app'
   ],
   credentials: true,
 }));
