@@ -30,13 +30,14 @@ app.use(
       // allow server-to-server & Postman
       if (!origin) return callback(null, true);
 
-      // allow known origins
-      if (allowedOrigins.includes(origin)) {
+      // allow known origins (filter out undefined)
+      const filteredOrigins = allowedOrigins.filter(Boolean);
+      if (filteredOrigins.includes(origin)) {
         return callback(null, true);
       }
 
       // allow ANY vercel.app subdomain
-      if (origin.endsWith('.vercel.app')) {
+      if (origin && origin.endsWith('.vercel.app')) {
         return callback(null, true);
       }
 
