@@ -95,8 +95,9 @@ app.use((err, req, res, next) => {
 });
 
 /* -------------------- START -------------------- */
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`🌐 Frontend URL: ${process.env.FRONTEND_URL}`);
+  console.log(`🔗 MongoDB URI: ${process.env.MONGODB_URI ? 'Configured' : 'NOT SET'}`);
 });
