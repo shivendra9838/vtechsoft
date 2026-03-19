@@ -14,6 +14,7 @@
     "JWT_SECRET": "techsoft",
     "EMAIL_USER": "vtechsoft9838@gmail.com",
     "EMAIL_PASS": "jzpnvonsyeegcxfo",
-    "FRONTEND_URL": "https://vtechsoft-frontend.vercel.app"
+    "FRONTEND_URL": "https://vtechsoft-frontend-i77s.vercel.app",
+    "PORT": "5001"
   }
 }
